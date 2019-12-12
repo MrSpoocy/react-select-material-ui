@@ -30,6 +30,7 @@ const Select = ({
   isAsync,
   isCreatable,
   components,
+  variant,
   ...otherProps
 }) => {
   const theme = useTheme();
@@ -58,7 +59,7 @@ const Select = ({
         <TextField
           id={id}
           label={label}
-          variant="outlined"
+          variant={variant}
           margin={margin}
           fullWidth
           value="..."
@@ -74,7 +75,7 @@ const Select = ({
         TextFieldProps={{
           label,
           fullWidth: true,
-          variant: 'outlined',
+          variant: variant,
           margin,
           error,
           helperText,
@@ -113,7 +114,8 @@ Select.propTypes = {
   isAsync: PropTypes.bool,
   isCreatable: PropTypes.bool,
   helperText: PropTypes.string,
-  components: PropTypes.shape()
+  components: PropTypes.shape(),
+  variant: PropTypes.string
 };
 
 Select.defaultProps = {
@@ -123,7 +125,8 @@ Select.defaultProps = {
   isAsync: false,
   isCreatable: false,
   helperText: null,
-  components: null
+  components: null,
+  variant: 'outlined'
 };
 
 export default Select;
